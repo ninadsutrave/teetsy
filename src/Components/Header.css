@@ -1,0 +1,57 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem 0 4rem;
+}
+
+.Header div {
+    width: 50%;
+}
+
+.title {
+    color: var(--blue);
+    font-size: 1.8rem;   
+    padding-top: 1rem;    
+}
+
+@media screen and (max-width: 580px) {
+
+    .Header {
+        padding-left: 1rem;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .Header {
+        padding-left: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .logo {
+       width: 100px;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+
+    .logo {
+       width: 75px;
+    }
+
+    .title {
+        font-size: 0.75rem;
+    }
+
+}
+

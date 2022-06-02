@@ -1,0 +1,15 @@
+:root {
+  --blue: #147587;
+  --yellow: #FECB5F;
+  --grey: #F3ECE5;
+  --red: #FA7E5C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: 'Sunflower', sans-serif;
+  color: var(--dark-blue);
+}

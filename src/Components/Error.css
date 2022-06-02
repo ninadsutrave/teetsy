@@ -1,0 +1,44 @@
+.Error404 {
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--blue);
+}
+
+.Logo {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.ErrImage {
+    width: 50%;
+}
+
+.error-message {
+    font-weight: 300;
+}
+
+@media screen and (max-width: 900px) {
+    .Logo {
+        width: 100px;
+    }
+    .ErrImage {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Error404 {
+        justify-content: center;
+    }
+    .Logo {
+        width: 75px;
+    }
+    .ErrImage {
+        width: 100%;
+    }
+}
