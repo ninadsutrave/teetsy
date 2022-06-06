@@ -140,10 +140,10 @@ const RightSection = () => {
 
   return (
     <div className="RightSection">
-        <h3 className="description">
+        <h2 className="description">
             Create the best custom links for all purposes
             and experience greatly improved engagement
-        </h3>
+        </h2>
 
         <div>
             <form className="form">

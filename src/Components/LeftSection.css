@@ -14,6 +14,11 @@
     color: var(--yellow);
 }
 
+/* .highlight {
+    background: linear-gradient(180deg, #411515 0%, #614646 100%);
+    white-space: no-wrap    ;
+} */
+
 .illustration {
     width: 339px;
     height: 252px;
