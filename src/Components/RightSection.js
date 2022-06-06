@@ -57,7 +57,7 @@ const RightSection = () => {
 
     const handleSave = async (e) => {
 
-        if(availibility == "Reserved")
+        if(availibility === "Reserved")
             return
 
         axios.post('/create', {"code": code, "longUrl": longUrl})
@@ -78,9 +78,9 @@ const RightSection = () => {
       const updateCode = (e) => {
         setCode(e.target.value)
 
-        if(e.target.value == "") {
-            return setAvailibility("Reserved")
+        if(e.target.value === "") {
             setErr3Vis("")
+            return setAvailibility("Reserved")
         }
     
         const searchItem = e.target.value
@@ -96,7 +96,7 @@ const RightSection = () => {
                 setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
                 setErr3Vis("show")
             }
-            else if(res.data.message == "Reserved") {
+            else if(res.data.message === "Reserved") {
                 setErrMessage("This code is already reserved")
                 setErr3Vis("show")
             }
@@ -183,7 +183,7 @@ const RightSection = () => {
                 value={code}
                 onChange={updateCode}            
             />
-            {(availibility == "Available")?<img className="indicator" alt="available" src={check} />:<img className="indicator" alt="available" src={exclamation} />}
+            {(availibility === "Available")?<img className="indicator" alt="available" src={check} />:<img className="indicator" alt="available" src={exclamation} />}
         </div>  
 
         <div className={"save-button "+shortVis}>

@@ -19,6 +19,10 @@
     height: 252px;
 }
 
+.logo {
+    width: 147px;
+    height: 55px;
+}
 
 
 @media screen and (max-width: 880px) {
