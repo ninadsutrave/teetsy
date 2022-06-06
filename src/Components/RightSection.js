@@ -79,13 +79,12 @@ const RightSection = () => {
         setCode(e.target.value)
 
         if(e.target.value === "") {
-            setErr3Vis("")
             return setAvailibility("Reserved")
         }
     
         const searchItem = e.target.value
     
-        axios.get('/search', { params: {
+        axios.get(process.env.REACT_APP_BASE_URL+'/search', { params: {
           searchItem
         }})
         .then(res => {
