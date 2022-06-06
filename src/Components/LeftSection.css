@@ -14,6 +14,11 @@
     color: var(--yellow);
 }
 
+.illustration {
+    width: 339px;
+    height: 252px;
+}
+
 
 
 @media screen and (max-width: 880px) {

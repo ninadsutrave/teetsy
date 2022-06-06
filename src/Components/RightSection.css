@@ -152,10 +152,6 @@ h5 {
     visibility: visible;
 }
 
-#track-clicks {
-    background: url(../assets/track.svg) no-repeat contain;
-}
-
 @media screen and (max-width: 880px) {
 
     .input {
@@ -166,7 +162,7 @@ h5 {
         width: 90%;
     }
 
-    #save, #track-clicks {
+    #save {
         width: 50%;
     }
     .save-button {
