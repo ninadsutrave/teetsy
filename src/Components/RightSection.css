@@ -35,7 +35,7 @@
     font-weight: 300;
     font-size: 12px;
     line-height: 12px;
-    color: var(--yellow);
+    color: var(--darkgrey);
 }
 
 .input:focus::placeholder {
