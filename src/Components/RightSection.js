@@ -60,7 +60,9 @@ const RightSection = () => {
         if(availibility === "Reserved")
             return
 
-        axios.post('/create', {"code": code, "longUrl": longUrl})
+        const createUrl = process.env.REACT_APP_BASE_URL + '/create'
+
+        axios.post(createUrl, {"code": code, "longUrl": longUrl})
         .then(res => setShortUrl(res.data.shortUrl))
         .catch(err => console.log(err.response.data.message))
         .catch(err => console.log(err.message))
