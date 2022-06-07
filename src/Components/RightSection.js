@@ -62,7 +62,7 @@ const RightSection = () => {
 
         const createUrl = process.env.REACT_APP_BASE_URL + '/create'
 
-        axios.post(createUrl, {"code": code, "longUrl": longUrl})
+        axios.post('/create', {"code": code, "longUrl": longUrl})
         .then(res => setShortUrl(res.data.shortUrl))
         .catch(err => console.log(err.response.data.message))
         .catch(err => console.log(err.message))
@@ -89,7 +89,7 @@ const RightSection = () => {
 
         console.log(searchUrl)
     
-        axios.get(searchUrl, { params: {
+        axios.get('/search', { params: {
           searchItem
         }})
         .then(res => {
@@ -115,6 +115,9 @@ const RightSection = () => {
       const getClicks = (e) => {
         e.preventDefault()
         console.log(shortUrl)
+
+        const clicksUrl = process.env.REACT_APP_BASE_URL+'/search'
+
         axios.post('/clicks', {"shortUrl": shortUrl})
           .then(res => {
               console.log("Yo")
