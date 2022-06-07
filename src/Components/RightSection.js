@@ -86,7 +86,7 @@ const RightSection = () => {
         }
     
         const searchItem = e.target.value
-        const searchUrl = process.env.REACT_APP_BASE_URL+'/clicks'
+        const searchUrl = process.env.REACT_APP_BASE_URL+'/search'
     
         axios.get(searchUrl, { params: {
           searchItem
@@ -115,7 +115,7 @@ const RightSection = () => {
         e.preventDefault()
         console.log(shortUrl)
 
-        const clicksUrl = process.env.REACT_APP_BASE_URL+'/search'
+        const clicksUrl = process.env.REACT_APP_BASE_URL+'/clicks'
 
         axios.post(clicksUrl, {"shortUrl": shortUrl})
           .then(res => {
