@@ -35,7 +35,7 @@
     font-weight: 300;
     font-size: 12px;
     line-height: 12px;
-    color: #FECB5F;
+    color: var(--yellow);
 }
 
 .input:focus::placeholder {
@@ -151,6 +151,16 @@ h5 {
 
 .visible2 {
     visibility: visible;
+}
+
+.available-indicator {
+    width: 20px;
+    height: 20px;    
+}
+
+.reserved-indicator {
+    width: 16px;
+    height: 16px;
 }
 
 @media screen and (max-width: 880px) {

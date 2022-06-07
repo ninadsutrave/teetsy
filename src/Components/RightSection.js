@@ -83,8 +83,11 @@ const RightSection = () => {
         }
     
         const searchItem = e.target.value
+        const searchUrl = process.env.REACT_APP_BASE_URL+'/search'
+
+        console.log(searchUrl)
     
-        axios.get(process.env.REACT_APP_BASE_URL+'/search', { params: {
+        axios.get(searchUrl, { params: {
           searchItem
         }})
         .then(res => {
@@ -182,7 +185,7 @@ const RightSection = () => {
                 value={code}
                 onChange={updateCode}            
             />
-            {(availibility === "Available")?<img className="indicator" alt="available" src={check} />:<img className="indicator" alt="available" src={exclamation} />}
+            {(availibility === "Available")?<img className="available-indicator" alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
         </div>  
 
         <div className={"save-button "+shortVis}>
