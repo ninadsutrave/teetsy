@@ -81,11 +81,12 @@ const RightSection = () => {
         setCode(e.target.value)
 
         if(e.target.value === "") {
+            setErr3Vis("Please fill in a valid code")
             return setAvailibility("Reserved")
         }
     
         const searchItem = e.target.value
-        const searchUrl = process.env.REACT_APP_BASE_URL+'/search'
+        const searchUrl = process.env.REACT_APP_BASE_URL+'/clicks'
     
         axios.get(searchUrl, { params: {
           searchItem
@@ -103,7 +104,7 @@ const RightSection = () => {
                 setErr3Vis("show")
             }
             else {
-                setErr3Vis("")
+                setErr3Vis("Code Available! Hit save to proceed.")
             }
         })
         .catch(err => console.warn(err));
