@@ -60,7 +60,7 @@ const RightSection = () => {
         if(availibility === "Reserved")
             return
 
-        const createUrl = process.env.REACT_APP_BASE_URL + '/create'
+        // const createUrl = process.env.REACT_APP_BASE_URL + '/create'
 
         axios.post('/create', {"code": code, "longUrl": longUrl})
         .then(res => setShortUrl(res.data.shortUrl))
@@ -85,9 +85,7 @@ const RightSection = () => {
         }
     
         const searchItem = e.target.value
-        const searchUrl = process.env.REACT_APP_BASE_URL+'/search'
-
-        console.log(searchUrl)
+        // const searchUrl = process.env.REACT_APP_BASE_URL+'/search'
     
         axios.get('/search', { params: {
           searchItem
@@ -116,7 +114,7 @@ const RightSection = () => {
         e.preventDefault()
         console.log(shortUrl)
 
-        const clicksUrl = process.env.REACT_APP_BASE_URL+'/search'
+        // const clicksUrl = process.env.REACT_APP_BASE_URL+'/search'
 
         axios.post('/clicks', {"shortUrl": shortUrl})
           .then(res => {
