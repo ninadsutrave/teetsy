@@ -77,23 +77,34 @@ const RightSection = () => {
     
       }
 
-      const updateCode = (e) => {
-        setCode(e.target.value)
+      const debounceFunc = (func, delay) => {
+        let timer;
+         return function(...args) {
+            const context = this;
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(context, args);
+            }, delay)
+          }
+     }
+    const updateCode = (...args) => {
+        const value = args[0].target.value
+        setCode(value)
 
-        if(e.target.value === "") {
+        if(value === "") {
             setErrMessage("Please fill in a valid code")
             setErr3Vis("show")
             return setAvailibility("Reserved")
         }
 
         var isValidCode = /^[a-zA-Z0-9-_]+$/;
-        if (e.target.value.search(isValidCode) === -1) { 
+        if (value.search(isValidCode) === -1) { 
             setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
             setErr3Vis("show")
             return setAvailibility("Reserved")
         }
     
-        const searchItem = e.target.value
+        const searchItem = value
         const searchUrl = process.env.REACT_APP_BASE_URL+'search'      
         
         axios.get(searchUrl, { params: {
@@ -112,12 +123,15 @@ const RightSection = () => {
                 setErr3Vis("show")
             }
             else {
-                setErr3Vis("Code Available! Hit save to proceed.")
+                setErrMessage("Code Available! Hit save to proceed.")
+                setErr3Vis("show")
             }
         })
         .catch(err => console.warn(err));
 
       }
+
+      const optimisedSearchHandler = debounceFunc(updateCode, 500)
 
       const getClicks = (e) => {
         e.preventDefault()
@@ -194,8 +208,8 @@ const RightSection = () => {
                 type="text"
                 id="urlCode"
                 autoComplete="off"
-                value={code}
-                onChange={updateCode}            
+                placeholder="Type something"
+                onChange={optimisedSearchHandler}            
             />
             {(availibility === "Available")?<img className="available-indicator" alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
         </div>  
