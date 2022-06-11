@@ -167,6 +167,10 @@ h5 {
     height: 16px;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 @media screen and (max-width: 880px) {
 
     .input {

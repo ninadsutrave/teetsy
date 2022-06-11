@@ -4,7 +4,6 @@ import check from '../assets/check.svg'
 import exclamation from '../assets/exclamation.svg'
 
 import axios from 'axios'
-import shortid from 'shortid'
 import validUrl from 'valid-url'
 
 const RightSection = () => {
@@ -14,6 +13,7 @@ const RightSection = () => {
     const [code, setCode] = useState()
     const [clicks, setClicks] = useState()
 
+    const [disabled, setDisabled] = useState("disabled")
     const [availibility, setAvailibility] = useState("Available")
     const [shortVis, setShortVis] = useState()
     const [err1Vis, setErr1Vis] = useState()
@@ -43,10 +43,8 @@ const RightSection = () => {
         e.preventDefault()
 
         if(validUrl.isUri(longUrl)) {
-            const getCode = shortid.generate()
             setErr1Vis("")   
             setShortVis("visible")
-            setCode(getCode)
         }
         else {
             console.log('Yo')
@@ -94,6 +92,7 @@ const RightSection = () => {
         if(value === "") {
             setErrMessage("Please fill in a valid code")
             setErr3Vis("show")
+            setDisabled("disabled")
             return setAvailibility("Reserved")
         }
 
@@ -101,6 +100,7 @@ const RightSection = () => {
         if (value.search(isValidCode) === -1) { 
             setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
             setErr3Vis("show")
+            setDisabled("disabled")
             return setAvailibility("Reserved")
         }
     
@@ -117,14 +117,17 @@ const RightSection = () => {
             if (searchItem.search(isValidCode) === -1) { 
                 setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
                 setErr3Vis("show")
+                setDisabled("disabled")
             }
             else if(res.data.message === "Reserved") {
                 setErrMessage("This code is already reserved")
                 setErr3Vis("show")
+                setDisabled("disabled")
             }
             else {
                 setErrMessage("Code Available! Hit save to proceed.")
                 setErr3Vis("show")
+                setDisabled("")
             }
         })
         .catch(err => console.warn(err));
@@ -214,7 +217,7 @@ const RightSection = () => {
             {(availibility === "Available")?<img className="available-indicator" alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
         </div>  
 
-        <div className={"save-button "+shortVis}>
+        <div className={"save-button "+shortVis+" "+disabled}>
             <button 
                 className="submit1" 
                 id="save"
