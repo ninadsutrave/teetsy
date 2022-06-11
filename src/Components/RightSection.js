@@ -81,20 +81,21 @@ const RightSection = () => {
         setCode(e.target.value)
 
         if(e.target.value === "") {
-            setErr3Vis("Please fill in a valid code")
+            setErrMessage("Please fill in a valid code")
+            setErr3Vis("show")
             return setAvailibility("Reserved")
         }
-    
-        const searchItem = e.target.value
-        const searchUrl = process.env.REACT_APP_BASE_URL+'search'
 
         var isValidCode = /^[a-zA-Z0-9-_]+$/;
-        if (searchItem.search(isValidCode) === -1) { 
+        if (e.target.value.search(isValidCode) === -1) { 
             setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
             setErr3Vis("show")
             return setAvailibility("Reserved")
         }
     
+        const searchItem = e.target.value
+        const searchUrl = process.env.REACT_APP_BASE_URL+'search'      
+        
         axios.get(searchUrl, { params: {
           searchItem
         }})
