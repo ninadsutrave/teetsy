@@ -87,6 +87,12 @@ const RightSection = () => {
     
         const searchItem = e.target.value
         const searchUrl = process.env.REACT_APP_BASE_URL+'search'
+
+        var isValidCode = /^[a-zA-Z0-9-_]+$/;
+        if (searchItem.search(isValidCode) === -1) { 
+            setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
+            return setErr3Vis("show")
+        }
     
         axios.get(searchUrl, { params: {
           searchItem
@@ -94,12 +100,7 @@ const RightSection = () => {
         .then(res => {
             console.log(res.data.message)
             setAvailibility(res.data.message)
-            var isValidCode = /^[a-zA-Z0-9-_]+$/;
-            if (searchItem.search(isValidCode) === -1) { 
-                setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
-                setErr3Vis("show")
-            }
-            else if(res.data.message === "Reserved") {
+            if(res.data.message === "Reserved") {
                 setErrMessage("This code is already reserved")
                 setErr3Vis("show")
             }
