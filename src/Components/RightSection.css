@@ -130,6 +130,10 @@ h5 {
     color: var(--red);
 }
 
+#urlCode:focus::placeholder {
+    color: transparent;    
+}
+
 .clicks {
     padding-top: 0.5rem;
     margin-right: 2rem;
