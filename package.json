@@ -1,6 +1,14 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "description": "A free custom URL shortening service for improved engagement",
+  "keywords": [
+    "url",
+    "url shortner",
+    "custom url"
+  ],
+  "author": "Ninad Sutrave",
+  "license": "MIT",
   "private": true,
   "proxy": "https://tit.vercel.app/",
   "dependencies": {
