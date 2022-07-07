@@ -9,7 +9,7 @@ const Header = () => {
         <img className="logo" alt="Teetsy Logo" src={LogoSvg} />
       </div>
       <div>
-        <h1 className="title">Free URL Shortner</h1>
+        <h1 className="title">Free URL Shortener</h1>
       </div>
     </div>
   )
