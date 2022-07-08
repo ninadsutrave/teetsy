@@ -7,14 +7,19 @@ A free and extremely handy tool to shorten the URL of your marketing website, pr
 ## Why should you use Teetsy?
 
 ✓ Track number of clicks made
+
 ✓ Create a custom link best suited for your needs
+
 ✓ Convenient sharing of links via posters, social media, etc
+
 ✓ Stronger and improved engagement
+
 ✓ Professional appearance
 
 ## Possible Additions
 
 - QR code generation for the link
+
 - Line chart visualising the audience's response
 
 ## Preview
