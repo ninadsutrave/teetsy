@@ -21,6 +21,7 @@ const RightSection = () => {
     const [err2Vis, setErr2Vis] = useState()
     const [err3Vis, setErr3Vis] = useState("show")
     const [errMessage, setErrMessage] = useState()
+    const [iconVisibility, setIconVisibility] = useState("invisible");
 
     const updateLongUrl = (e) => {
         setLongUrl(e.target.value)
@@ -86,6 +87,7 @@ const RightSection = () => {
           }
      }
     const updateCode = (...args) => {
+        setIconVisibility("visible3");
         setErrMessage("Checking availability...");
         const value = args[0].target.value
         setCode(value)
