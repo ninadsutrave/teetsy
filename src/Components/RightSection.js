@@ -86,6 +86,7 @@ const RightSection = () => {
           }
      }
     const updateCode = (...args) => {
+        setErrMessage("Checking availability...");
         const value = args[0].target.value
         setCode(value)
 
