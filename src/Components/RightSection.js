@@ -19,7 +19,7 @@ const RightSection = () => {
     const [err1Vis, setErr1Vis] = useState()
     const [clicksVis, setClicksVis] = useState()
     const [err2Vis, setErr2Vis] = useState()
-    const [err3Vis, setErr3Vis] = useState()
+    const [err3Vis, setErr3Vis] = useState("show")
     const [errMessage, setErrMessage] = useState()
 
     const updateLongUrl = (e) => {
