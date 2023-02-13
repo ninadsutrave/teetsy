@@ -87,7 +87,6 @@ const RightSection = () => {
           }
      }
     const updateCode = (...args) => {
-        setIconVisibility("visible3");
         setErrMessage("Checking availability...");
         const value = args[0].target.value
         setCode(value)
@@ -96,6 +95,7 @@ const RightSection = () => {
             setErrMessage("Please fill in a valid code")
             setErr3Vis("show")
             setDisabled("disabled")
+            setIconVisibility("visible3");
             return setAvailibility("Reserved")
         }
 
@@ -104,6 +104,7 @@ const RightSection = () => {
             setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
             setErr3Vis("show")
             setDisabled("disabled")
+            setIconVisibility("visible3");
             return setAvailibility("Reserved")
         }
     
@@ -118,18 +119,21 @@ const RightSection = () => {
             setAvailibility(res.data.message)
             var isValidCode = /^[a-zA-Z0-9-_]+$/;
             if (searchItem.search(isValidCode) === -1) { 
-                setErrMessage("Note: The code must include alphanumerals, hyphen or underscore")
+                setErrMessage("Note: The code must only include alphanumerals, hyphen or underscore")
                 setErr3Vis("show")
+                setIconVisibility("visible3");
                 setDisabled("disabled")
             }
             else if(res.data.message === "Reserved") {
                 setErrMessage("This code is already reserved")
                 setErr3Vis("show")
+                setIconVisibility("visible3");
                 setDisabled("disabled")
             }
             else {
                 setErrMessage("Code Available! Hit save to proceed.")
                 setErr3Vis("show")
+                setIconVisibility("visible3");
                 setDisabled("")
             }
         })
