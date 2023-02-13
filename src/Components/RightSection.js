@@ -217,7 +217,7 @@ const RightSection = () => {
                 placeholder="Type something"
                 onChange={optimisedSearchHandler}            
             />
-            {(availibility === "Available")?<img className="available-indicator" alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
+            {(availibility === "Available")?<img className={"available-indicator "+setIconVisibility} alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
         </div>  
 
         <div className={"save-button "+shortVis+" "+disabled}>
