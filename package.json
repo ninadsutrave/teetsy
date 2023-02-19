@@ -7,7 +7,15 @@
     "url shortner",
     "custom url"
   ],
-  "author": "Ninad Sutrave",
+  "author": {
+    "name": "Ninad Sutrave",
+    "email": "ninadsutrave@gmail.com",
+    "url": "https://ninadsutrave.in"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ninadsutrave/teetsy"
+  },
   "license": "MIT",
   "private": true,
   "proxy": "https://tit.vercel.app/",
