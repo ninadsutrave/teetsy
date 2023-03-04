@@ -226,15 +226,15 @@ const RightSection = () => {
 
         <div className={"save-button "+shortVis}>
             <button 
-                className={"submit1 "+disabled}
-                id="save"
+                className="submit1"
+                id={"save " + disabled}
                 onClick={handleSave}
             >
                 Save and Copy
             </button> 
             <button 
-                    className={"submit1 "+disabled}
-                    id="save"
+                    className="submit1"
+                    id={"save " + disabled}
                     onClick={handleSave}
                 >
                     <a className="qr" href={disabled !== "disabled" && process.env.REACT_APP_QR_URL+code} download={disabled !== "disabled"}>
