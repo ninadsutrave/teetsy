@@ -6,8 +6,6 @@ A free and extremely handy tool to shorten the URL of your marketing website, pr
 
 ## Why should you use Teetsy?
 
-✓ Track number of clicks made
-
 ✓ Create a custom link best suited for your needs
 
 ✓ Convenient sharing of links via posters, social media, etc
@@ -16,9 +14,11 @@ A free and extremely handy tool to shorten the URL of your marketing website, pr
 
 ✓ Professional appearance
 
-## Possible Additions
+✓ Track number of clicks made
 
-- QR code generation for the link
+✓ Generate QR code
+
+## Possible Additions
 
 - Line chart visualising the audience's response
 
@@ -36,4 +36,4 @@ https://teetsy.netlify.app
 
 ## License
 
-MIT © Ninad Sutrave
+MIT © [Ninad Sutrave](https://ninadsutrave.in)

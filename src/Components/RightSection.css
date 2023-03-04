@@ -144,6 +144,7 @@ h5 {
 
 .check2 {
     width: 100%;
+    text-decoration: none;
 }
 
 #urlCode:focus::placeholder {
@@ -161,12 +162,11 @@ h5 {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
     visibility: hidden;
 }
 
 .duo {
-    width: 50%;
+    width: 100%;
     max-width: 180px;
     border-radius: 0%;
 }
