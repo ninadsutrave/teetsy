@@ -138,6 +138,10 @@ h5 {
     color: var(--red);
 }
 
+#check {
+    width: 100%;
+}
+
 #urlCode:focus::placeholder {
     color: transparent;    
 }
