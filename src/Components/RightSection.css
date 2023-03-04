@@ -81,7 +81,7 @@
     background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
 }
 
-#save {
+.save {
     align-self: center;
     width: 35%;
     border-radius: 0;
@@ -90,11 +90,11 @@
     transition: 0.5s linear ease-in;
 }
 
-#save:hover {
+.save:hover {
     background: #1FB2CD;
 }
 
-#save:active {
+.save:active {
     background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
 }
 
