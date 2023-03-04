@@ -142,6 +142,10 @@ h5 {
     width: 100%;
 }
 
+.check2 {
+    width: 100%;
+}
+
 #urlCode:focus::placeholder {
     color: transparent;    
 }

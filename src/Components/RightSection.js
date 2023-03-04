@@ -245,7 +245,7 @@ const RightSection = () => {
             }
             {
                 (disabled !== "disabled") && 
-                <a href={process.env.REACT_APP_QR_URL + code} className="save" download>
+                <a href={process.env.REACT_APP_QR_URL + code} className="save check2" download>
                 <button 
                     className="submit1 duo"
                     id={"check "+disabled}
