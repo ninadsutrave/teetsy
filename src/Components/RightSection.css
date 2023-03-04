@@ -148,13 +148,19 @@ h5 {
 }
 
 .save-button {
-    width: 50%;
+    width: 60%;
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
     visibility: hidden;
+}
+
+.duo {
+    width: 50%;
+    max-width: 180px;
+    border-radius: 0%;
 }
 
 .visible {
@@ -175,12 +181,12 @@ h5 {
     height: 16px;
 }
 
-.disabled {
+#disabled {
     cursor: not-allowed;
     background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
 }
 
-.disabled:hover {
+#disabled:hover {
     background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
 }
 
@@ -223,6 +229,10 @@ h5 {
 
     .description {
         font-size: 1rem;    
+    }
+
+    .save-button {
+        width: 80%;
     }
 
 }

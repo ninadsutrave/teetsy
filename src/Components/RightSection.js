@@ -226,14 +226,14 @@ const RightSection = () => {
 
         <div className={"save-button "+shortVis}>
             <button 
-                className="submit1"
+                className="submit1 duo"
                 id={"save " + disabled}
                 onClick={handleSave}
             >
                 Save and Copy
             </button> 
             <button 
-                    className="submit1"
+                    className="submit1 duo"
                     id={"save " + disabled}
                     onClick={handleSave}
                 >
