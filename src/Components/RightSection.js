@@ -224,14 +224,23 @@ const RightSection = () => {
             {(availibility === "Available")?<img className={"available-indicator "+iconVisibility} alt="available" src={check} />:<img className="reserved-indicator" alt="reserved" src={exclamation} />}
         </div>  
 
-        <div className={"save-button "+shortVis+" "+disabled}>
+        <div className={"save-button "+shortVis}>
             <button 
-                className="submit1" 
+                className={"submit1 "+disabled}
                 id="save"
                 onClick={handleSave}
             >
                 Save and Copy
             </button> 
+            <button 
+                    className={"submit1 "+disabled}
+                    id="save"
+                    onClick={handleSave}
+                >
+                    <a className="qr" href={disabled !== "disabled" && process.env.REACT_APP_QR_URL+code} download={disabled !== "disabled"}>
+                    Download QR
+                    </a>
+                </button> 
         </div>   
         <h5 className={"error3 "+err3Vis}>
             {errMessage}

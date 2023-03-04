@@ -148,11 +148,11 @@ h5 {
 }
 
 .save-button {
-    width: 60%;
+    width: 50%;
     text-align: center;
     display: flex;
-    flex-direction: column; 
     justify-content: center;
+    gap: 1rem;
     margin-bottom: 1rem;
     visibility: hidden;
 }
@@ -176,7 +176,12 @@ h5 {
 }
 
 .disabled {
-    pointer-events: none;
+    cursor: not-allowed;
+    background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
+}
+
+.disabled:hover {
+    background: linear-gradient(180deg, #147587 0%, #1FB2CD 100%);
 }
 
 @media screen and (max-width: 880px) {
@@ -190,12 +195,16 @@ h5 {
     }
 
     #save {
-        width: 50%;
+        width: 60%;
     }
     .save-button {
-        width: 80%;
+        width: 60%;
     }
     
+}
+
+.qr {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 730px) {
