@@ -58,13 +58,25 @@ const RightSection = () => {
         }
     }
 
-    const downloadQR = (url) => {
-        var link = document.createElement("a");
-        link.setAttribute('download', "qrcode");
-        document.body.appendChild(url);
-        link.click();
-        link.remove();
-    }
+    const downloadQR = (e) => {
+
+        console.log(e.target.href);
+        axios.get(e.target.href)
+          .then(res => {
+                res.arrayBuffer().then(function(buffer) {
+                const url = window.URL.createObjectURL(new Blob([buffer]));
+                const link = document.createElement("a");
+                link.href = url;
+                link.setAttribute("download", "qr.png");
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+    };
 
     const handleSave = async (e) => {
 
@@ -257,7 +269,7 @@ const RightSection = () => {
             }
             {
                 (disabled !== "disabled") && 
-                <a href={process.env.REACT_APP_QR_URL + code} className="save check2" download>
+                <a href={process.env.REACT_APP_QR_URL + code} className="save check2" download onClick={downloadQR} target="_blank" rel="noopener noreferrer">
                 <button 
                     className="submit1 duo"
                     id={"check "+disabled}
