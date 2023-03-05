@@ -28,7 +28,9 @@ A free and extremely handy tool to shorten the URL of your marketing website, pr
 
 ![This is how the website looks](src/assets/preview2.png)
 
-![My project] (src/assets/qr.png)
+Get your scanner 👇🏻
+
+![My project](src/assets/qr.png)
 
 ## Try it out?
 

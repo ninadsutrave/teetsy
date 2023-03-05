@@ -58,6 +58,14 @@ const RightSection = () => {
         }
     }
 
+    const downloadQR = (url) => {
+        var link = document.createElement("a");
+        link.setAttribute('download', "qrcode");
+        document.body.appendChild(url);
+        link.click();
+        link.remove();
+    }
+
     const handleSave = async (e) => {
 
         if(availibility === "Reserved")
@@ -253,7 +261,7 @@ const RightSection = () => {
                 <button 
                     className="submit1 duo"
                     id={"check "+disabled}
-                    onClick={handleSave}
+                    onClick={() =>downloadQR(process.env.REACT_APP_QR_URL + code)}
                     style={{width: '100%'}}
                 >
                     
