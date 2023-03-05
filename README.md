@@ -2,13 +2,13 @@
 
 ## Description
 
-A free and extremely handy tool to shorten the URL of your marketing website, project, portfolio, etc and share links in a much more professional way.
+A free and extremely handy tool to shorten the URL of your marketing website, project, portfolio, etc and share links in a much more professional way. Additionally, you can generate a QR code for your URL and can also sufficiently track the number of viewers attracted by Teetsy.
 
 ## Why should you use Teetsy?
 
 ✓ Create a custom link best suited for your needs
 
-✓ Convenient sharing of links via posters, social media, etc
+✓ Conveniently share links via messages, tweets, social media, etc
 
 ✓ Stronger and improved engagement
 
@@ -16,17 +16,19 @@ A free and extremely handy tool to shorten the URL of your marketing website, pr
 
 ✓ Track number of clicks made
 
-✓ Generate QR code
+✓ Generate QR code for sharing via posters
 
 ## Possible Additions
 
-- Line chart visualising the audience's response
+- Line chart visualising the audience's response over time
 
 ## Preview
 
 ![This is how the website looks](src/assets/preview1.png)
 
 ![This is how the website looks](src/assets/preview2.png)
+
+![My project] (src/assets/qr.png)
 
 ## Try it out?
 
