@@ -139,11 +139,11 @@ h5 {
 }
 
 #check {
+    border-radius: 0;
     width: 100%;
 }
 
 .check2 {
-    width: 100%;
     text-decoration: none;
 }
 
