@@ -29,7 +29,9 @@ const RightSection = () => {
         if(long && !validUrl.isUri(long)) {
             console.log(long)
             setErr1Vis("invalid-long")  
-            setShortVis("")                
+            setShortVis("")    
+            setErr3Vis("")
+            setIconVisibility("")            
         }
         else {
             setErr1Vis("")             
@@ -50,7 +52,9 @@ const RightSection = () => {
         else {
             console.log('Yo')
             setErr1Vis("invalid-long")  
-            setShortVis("")                
+            setShortVis("")  
+            setIconVisibility("")    
+            setErr3Vis("")          
         }
     }
 
@@ -250,6 +254,7 @@ const RightSection = () => {
                     className="submit1 duo"
                     id={"check "+disabled}
                     onClick={handleSave}
+                    style={{width: '100%'}}
                 >
                     
                     Download QR
