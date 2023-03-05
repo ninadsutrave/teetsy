@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { saveAs } from 'file-saver'
 import './RightSection.css'
 import check from '../assets/check.svg'
 import exclamation from '../assets/exclamation.svg'
@@ -273,7 +274,6 @@ const RightSection = () => {
                 <button 
                     className="submit1 duo"
                     id={"check "+disabled}
-                    onClick={() =>downloadQR(process.env.REACT_APP_QR_URL + code)}
                     style={{width: '100%'}}
                 >
                     
