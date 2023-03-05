@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { saveAs } from 'file-saver'
 import './RightSection.css'
 import check from '../assets/check.svg'
 import exclamation from '../assets/exclamation.svg'
