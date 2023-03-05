@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "private": true,
-  "proxy": "https://tit.vercel.app/",
+  "proxy": "https://tsy.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
