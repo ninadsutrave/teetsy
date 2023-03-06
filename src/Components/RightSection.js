@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { saveAs } from 'file-saver'
 import './RightSection.css'
 import check from '../assets/check.svg'
 import exclamation from '../assets/exclamation.svg'
@@ -59,23 +60,7 @@ const RightSection = () => {
     }
 
     const downloadQR = (e) => {
-
-        console.log(e.target.href);
-        axios.get(e.target.href)
-          .then(res => {
-                res.arrayBuffer().then(function(buffer) {
-                const url = window.URL.createObjectURL(new Blob([buffer]));
-                const link = document.createElement("a");
-                link.href = url;
-                link.setAttribute("download", "qr.png");
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-            });
-          })
-          .catch(err => {
-            console.log(err);
-          });
+        saveAs('qr.png', process.env.REACT_APP_QR_URL+code)
     };
 
     const handleSave = async (e) => {
@@ -256,7 +241,14 @@ const RightSection = () => {
             >
                 Save and Copy
             </button> 
-            {
+            <button
+                className="submit1 duo save"
+                id={disabled}
+                onClick={(disabled === "disabled")?()=>{}:downloadQR}
+            >
+                Download QR
+            </button>
+            {/* {
                 (disabled === "disabled") && 
                     <button 
                         className="submit1 duo save"
@@ -279,7 +271,7 @@ const RightSection = () => {
                     Download QR
                 </button> 
                 </a>
-            }
+            } */}
             
         </div>   
         <h5 className={"error3 "+err3Vis}>
