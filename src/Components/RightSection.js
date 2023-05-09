@@ -59,9 +59,28 @@ const RightSection = () => {
         }
     }
 
-    const downloadQR = (e) => {
-        saveAs('qr.png', process.env.REACT_APP_QR_URL+code)
-    };
+    const download = async (url) => {
+        const a = document.createElement("a");
+        a.href = await toDataURL(url);
+        a.download = "myQR.png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    
+    const toDataURL = (url) => {
+        return axios.get(url)
+          .then((response) => {
+            return response.blob();
+          })
+          .then((blob) => {
+            return URL.createObjectURL(blob);
+          });
+      }
+    
+    const handleQR = () => {
+        download(process.env.REACT_APP_QR_URL+code);
+    }
 
     const handleSave = async (e) => {
 
@@ -244,7 +263,7 @@ const RightSection = () => {
             <button
                 className="submit1 duo save"
                 id={disabled}
-                onClick={(disabled === "disabled")?()=>{}:downloadQR}
+                onClick={(disabled === "disabled")?()=>{}:handleQR}
             >
                 Download QR
             </button>
